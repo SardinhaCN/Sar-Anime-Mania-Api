@@ -4,17 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "yarn server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "SardinhaCN <<>>",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^3.8.1",
     "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "jsembeds": "^1.0.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
-  }
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.0",
+    "request": "^2.88.2",
+    "steplix-emv-qrcps": "0.0.8",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "prisma": "^3.8.1"
+  },
+  "repository": "https://github.com/SardinhaCN/Sar-Anime-Mania-Api"
 }

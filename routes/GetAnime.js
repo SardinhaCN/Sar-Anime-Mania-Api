@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const Get = require('./method/get');
+const Get = require('../method/get');
 
-router.get(`/api`, Get.getAll);
+router.get(`/`, Get.getAll);
 
-router.get("/api/anime", Get.getAnimes);
+router.get("/anime", Get.getAnimes);
 
-router.get("/api/anime/:id", Get.getAnimesId);
+router.get("/anime/:id", Get.getAnimesId);
 
-router.get("/api/anime/:id/eps", Get.getAnimesInfoEps);
+router.get("/anime/:id/eps", Get.getAnimesInfoEps);
 
-router.get("/api/anime/:id/eps/legendado", Get.getAnimesLeg);
-router.get("/api/anime/:id/eps/dublado", Get.getAnimesEpDub);
-router.get("/api/anime/:id/eps/title", Get.getAnimesEpTit);
+router.get("/anime/:id/eps/legendado", Get.getAnimesLeg);
+router.get("/anime/:id/eps/dublado", Get.getAnimesEpDub);
+router.get("/anime/:id/eps/title", Get.getAnimesEpTit);
 
-router.get("/api/anime/:id/genero", Get.getAnimesGenero);
+router.get("/anime/:id/genero", Get.getAnimesGenero);
 
 module.exports = router;

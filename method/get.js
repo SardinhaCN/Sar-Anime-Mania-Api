@@ -1,12 +1,21 @@
-let data = require('../data.json');
+let data = require('../DataBase/data.json');
 
 let data1 = JSON.stringify(data),
 obj = JSON.parse(data1);
 
-let aplicativo = obj.config.App,
+let config = obj.config,
+aplicativo = obj.config.App,
 desktop = obj.config.AppDesktop,
 anime = obj.Anime,
 episodios = obj.Anime[0].UrlEpisodios;
+
+exports.getConfig = async (req, res, next) => {
+  try {
+    return res.status(200).json(config);
+  } catch (error) {
+    return res.status(500).json({ error: error });
+  }
+}
 
 exports.getApp = async (req, res, next) => {
   try {
