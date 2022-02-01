@@ -1,4 +1,4 @@
-let data = require('../DataBase/data.json');
+let data = require('../DataBase/db.json');
 
 let data1 = JSON.stringify(data),
   obj = JSON.parse(data1);

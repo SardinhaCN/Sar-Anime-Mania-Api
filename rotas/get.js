@@ -1,4 +1,6 @@
-let data = require('../DataBase/data.json');
+const funcoes = require("../Funcoes");
+
+let data = funcoes.load('./DataBase/db.json');
 
 let data1 = JSON.stringify(data),
 obj = JSON.parse(data1);

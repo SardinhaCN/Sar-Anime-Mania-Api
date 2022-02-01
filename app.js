@@ -32,9 +32,11 @@ app.use((req, res, next) => {
     next();
 });
 
+/*
 app.use('/home', function(req, res, next) {
   res.status(200).render('pages/index');
 });
+*/
 
 app.use('/api', configRoute);
 app.use('/api', animeRoute);

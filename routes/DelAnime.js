@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Get = require('../method/delete');
+const Get = require('../rotas/delete');
 
 router.delete("/anime/:id", Get.delAnime);
 

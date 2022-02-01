@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Get = require('../method/get');
+const Get = require('../rotas/get');
 
 router.get(`/`, Get.getAll);
 

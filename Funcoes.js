@@ -1,6 +1,6 @@
 // const funcoes = require("./Funcoes");
 
-// funcoes.save(arquivoJSON exemplo: '../JSON/lista_de_videos.json');
+// funcoes.save();
 // funcoes.load(arquivoJSON exemplo: '../JSON/lista_de_videos.json');
 // funcoes.directory('./public/mp4','./JSON/lista_de_videos.json');
 // funcoes.listar('./JSON/lista_de_videos.json');
@@ -16,25 +16,35 @@ const util = require('util');
 const parser = new xml2js.Parser();
 const BrCode = require('./lib/br_code.js');
 const QRCode = require('qrcode');
+const path = require('path');
 
 let data = {}, aux = 0;
 
 let QR_CODE_SIZE = 400;
 
 exports.save = (content) => {
+  try {
   let contentFilePath = content.caminho;
-  let files = content.content;
+  let files = content.conteudo;
   const contentString = JSON.stringify(files, null, 2);
   return fs.writeFileSync(contentFilePath, contentString);
+  } catch (error) {
+    return console.log({ error: error });
+  }
 }
 exports.load = (content) => {
+  try {
   let contentFilePath = content;
   const fileBuffer = fs.readFileSync(contentFilePath, 'utf-8');
   const contentJson = JSON.parse(fileBuffer);
   return contentJson;
+  } catch (error) {
+    return console.log({ error: error });
+  }
 }
 
 exports.directory = (directory, caminho) => {
+  try {
   fs.readdir(directory, (err, files) => {
     if (err) {
       console.log(err.message);
@@ -45,6 +55,9 @@ exports.directory = (directory, caminho) => {
       });
     }
   });
+  } catch (error) {
+    return console.log({ error: error });
+  }
 }
 
 exports.createUrl = async (arquivos) => {
