@@ -1,0 +1,22 @@
+let array = [
+  "id",
+  "Pesquisa",
+  "Titulo_do_anime",
+  "Capa_do_Anime",
+  "Banner_do_Anime",
+  "Trailer_do_Anime",
+  "Formato",
+  "Autor",
+  "Diretor",
+  "Estudio",
+  "Tipo_de_Episodio",
+  "Episodios",
+  "Ovas",
+  "Filmes",
+  "Anime_Para",
+  "Ano",
+  "Dialog_Titulo",
+  "Sinopse",
+  "Lancamento_Controle",
+  "Dia_do_Lancamento"
+]

@@ -2,41 +2,48 @@ const fs = require("fs");
 
 const funcoes = require("./Funcoes");
 
-let data = funcoes.load('./DataBase/db.json');
+let data = funcoes.load('./d0b.json');
 
-let data1 = JSON.stringify(obj),
-data = JSON.parse(data1);
+let data1 = JSON.stringify(data),
+obj = JSON.parse(data1);
 
-let array = [
-  "id",
-  "Pesquisa",
-  "Titulo_do_anime",
-  "Capa_do_Anime",
-  "Banner_do_Anime",
-  "Trailer_do_Anime",
-  "Formato",
-  "Autor",
-  "Diretor",
-  "Estudio",
-  "Tipo_de_Episodio",
-  "Episodios",
-  "Ovas",
-  "Filmes",
-  "Anime_Para",
-  "Ano",
-  "Dialog_Titulo",
-  "Sinopse",
-  "Lancamento_Controle",
-  "Dia_do_Lancamento"
-]
+let anime = obj,
+title = obj.Pesquisa,
+episodios = obj.UrlEpisodios,
+genero = obj.Genero;
 
-function JsonTeste() {
-  fs.writeFile('./dbTeste.json', JSON.stringify(data, array, 2), 'utf-8', (error, result) => {
-    if (error) {
-      console.log(error);
-      return;
-    }
-    console.log(result)
-  })
+
+let animeInfo = {
+  
 }
-JsonTeste();
+
+
+
+
+
+/*funcoes.save({
+  conteudo: episodios,
+  caminho: `./DataBase/${title}/Episodios.json`
+  });*/
+funcoes.save({
+  conteudo: episodios,
+  caminho: `./DataBase/${title}/Episodios.json`
+  });
+funcoes.save({
+  conteudo: genero,
+  caminho: `./DataBase/${title}/genero.json`
+  });
+
+
+const
+fs.mkdir('./pDirectory/folder1/childFolder',
+{
+recursive: true
+}, (err) => {
+if (err) {
+console.log("error occurred in creating new directory", err);
+return;
+}
+
+console.log("New directory created successfully");
+});
